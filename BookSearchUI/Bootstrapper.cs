@@ -29,6 +29,7 @@ namespace BookSearchUI
             _container.Singleton<IWindowManager, WindowManager>();
 
             _container.RegisterPerRequest(typeof(ShellViewModel), null, typeof(ShellViewModel));
+            _container.RegisterPerRequest(typeof(MainSearchViewModel), null, typeof(MainSearchViewModel));
         }
 
         protected override object GetInstance(Type service, string key)

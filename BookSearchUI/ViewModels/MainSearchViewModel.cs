@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookSearchUI.ViewModels
 {
-    public class ShellViewModel : Conductor<Screen>
+    public class MainSearchViewModel : Screen
     {
-        public ShellViewModel()
-        {
-            ActivateItem(IoC.Get<MainSearchViewModel>());
-        }
+
     }
 }

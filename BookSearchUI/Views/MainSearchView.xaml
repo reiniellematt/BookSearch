@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="BookSearchUI.Views.MainSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookSearchUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Background="White">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Content="Search Results:" />
+        <ListView x:Name="SearchResults"
+                Grid.Row="1" Grid.Column="7" Grid.RowSpan="10" Grid.ColumnSpan="7" Margin="0,-12,12,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" Width="240"/>
+                    <GridViewColumn Header="Author" Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Content="Search:"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Orientation="Horizontal">
+            <TextBox Width="200" Margin="0,0,4,0"/>
+            <ComboBox Width="80" Margin="4,0,0,0"/>
+        </StackPanel>
+        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="Search" Margin="0,-24,0,0"/>
+
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="Add Book"/>
+    </Grid>
+</UserControl>
