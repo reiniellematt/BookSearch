@@ -1,4 +1,5 @@
-﻿using BookSearchUI.ViewModels;
+﻿using BookSearchLibrary;
+using BookSearchUI.ViewModels;
 using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace BookSearchUI
         protected override void Configure()
         {
             _container.Singleton<IWindowManager, WindowManager>();
+            _container.Singleton<SQLiteHelper>();
 
             _container.RegisterPerRequest(typeof(ShellViewModel), null, typeof(ShellViewModel));
             _container.RegisterPerRequest(typeof(MainSearchViewModel), null, typeof(MainSearchViewModel));
