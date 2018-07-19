@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSearchUI", "BookSearchUI\BookSearchUI.csproj", "{4D09F42F-DAF2-4B02-8FC2-B221AC60FD26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSearchLibrary", "BookSearchLibrary\BookSearchLibrary.csproj", "{28B50B35-BF5C-462B-91DB-56A21113F20E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4D09F42F-DAF2-4B02-8FC2-B221AC60FD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D09F42F-DAF2-4B02-8FC2-B221AC60FD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D09F42F-DAF2-4B02-8FC2-B221AC60FD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B50B35-BF5C-462B-91DB-56A21113F20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B50B35-BF5C-462B-91DB-56A21113F20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B50B35-BF5C-462B-91DB-56A21113F20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B50B35-BF5C-462B-91DB-56A21113F20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
