@@ -14,8 +14,29 @@ namespace BookSearchUI.ViewModels
     {
         private readonly SQLiteHelper _helper;
 
-        private ObservableCollection<Book> _searchResults;
+        private string _searchQuery;
+        private string _searchOptionSelected;
+        private ObservableCollection<Book> _searchResults = new ObservableCollection<Book>();
+        private ObservableCollection<string> _searchOptions = new ObservableCollection<string>();
 
+        public string SearchQuery
+        {
+            get { return _searchQuery; }
+            set
+            {
+                _searchQuery = value;
+                NotifyOfPropertyChange(() => SearchQuery);
+            }
+        }
+        public string SearchOptionSelected
+        {
+            get { return _searchOptionSelected; }
+            set
+            {
+                _searchOptionSelected = value;
+                NotifyOfPropertyChange(() => SearchOptionSelected);
+            }
+        }
         public ObservableCollection<Book> SearchResults
         {
             get { return _searchResults; }
@@ -25,6 +46,15 @@ namespace BookSearchUI.ViewModels
                 NotifyOfPropertyChange(() => SearchResults);
             }
         }
+        public ObservableCollection<string> SearchOptions
+        {
+            get { return _searchOptions; }
+            set
+            {
+                _searchOptions = value;
+                NotifyOfPropertyChange(() => SearchOptions);
+            }
+        }
 
         public MainSearchViewModel(SQLiteHelper helper)
         {
@@ -32,9 +62,22 @@ namespace BookSearchUI.ViewModels
             Initialize();
         }
 
-        private async void Initialize()
+        private void Initialize()
         {
-            SearchResults = await _helper.GetAllBooksAsync();
+            SearchOptions.Add("Title");
+            SearchOptions.Add("Author");
+            SearchOptionSelected = SearchOptions[0];
+        }
+
+        public bool CanSearch(string searchQuery)
+        {
+            return !string.IsNullOrWhiteSpace(searchQuery);
+        }
+
+        public async Task Search(string searchQuery)
+        {
+            SearchResults = await _helper.GetBookAsync(SearchQuery, SearchOptionSelected);
+            NotifyOfPropertyChange(() => SearchResults);
         }
     }
 }

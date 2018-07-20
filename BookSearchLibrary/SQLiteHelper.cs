@@ -25,5 +25,15 @@ namespace BookSearchLibrary
                 return new ObservableCollection<Book>(output);
             }
         }
+
+        public async Task<ObservableCollection<Book>> GetBookAsync(string searchQuery, string searchOption)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(_cnnString))
+            {
+                var output = await cnn.QueryAsync<Book>($"SELECT * FROM Books WHERE {searchOption} LIKE '%{searchQuery}%'");
+
+                return new ObservableCollection<Book>(output);
+            }
+        }
     }
 }

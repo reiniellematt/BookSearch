@@ -51,8 +51,8 @@
 
         <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Content="Search:"/>
         <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6" Orientation="Horizontal">
-            <TextBox Width="200" Margin="0,0,4,0"/>
-            <ComboBox Width="80" Margin="4,0,0,0"/>
+            <TextBox x:Name="SearchQuery" Width="200" Margin="0,0,4,0"/>
+            <ComboBox x:Name="SearchOptions" SelectedIndex="0" SelectedItem="{Binding SearchOptionSelected}" Width="80" Margin="4,0,0,0"/>
         </StackPanel>
         <Button x:Name="Search" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="Search" Margin="0,-24,0,0"/>
 
