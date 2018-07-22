@@ -38,7 +38,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Content="Search Results:" />
+        <Label Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" Content="Search Results:" />
+        <Label Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="2" Content="{Binding NumberOfBooksFound}"/>
         <ListView x:Name="SearchResults"
                 Grid.Row="1" Grid.Column="7" Grid.RowSpan="10" Grid.ColumnSpan="7" Margin="0,-12,12,0">
             <ListView.View>

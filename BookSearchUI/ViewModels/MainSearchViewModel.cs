@@ -16,8 +16,12 @@ namespace BookSearchUI.ViewModels
 
         private string _searchQuery;
         private string _searchOptionSelected;
+        private string _numberOfBooksFound = string.Empty;
         private ObservableCollection<Book> _searchResults = new ObservableCollection<Book>();
         private ObservableCollection<string> _searchOptions = new ObservableCollection<string>();
+
+
+
 
         public string SearchQuery
         {
@@ -35,6 +39,15 @@ namespace BookSearchUI.ViewModels
             {
                 _searchOptionSelected = value;
                 NotifyOfPropertyChange(() => SearchOptionSelected);
+            }
+        }
+        public string NumberOfBooksFound
+        {
+            get { return _numberOfBooksFound; }
+            set
+            {
+                _numberOfBooksFound = value;
+                NotifyOfPropertyChange(() => NumberOfBooksFound);
             }
         }
         public ObservableCollection<Book> SearchResults
@@ -77,7 +90,7 @@ namespace BookSearchUI.ViewModels
         public async Task Search(string searchQuery)
         {
             SearchResults = await _helper.GetBookAsync(SearchQuery, SearchOptionSelected);
-            NotifyOfPropertyChange(() => SearchResults);
+            NumberOfBooksFound = $"{ SearchResults.Count } Books Found";
         }
     }
 }
